@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Internship Recommendation Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-graduation-cap"></i> PM Internship Finder</h1>
+            <p>Find the perfect government internship opportunity for you!</p>
+            <div style="background: linear-gradient(45deg, #FF6B35, #F7931E); color: white; padding: 10px; border-radius: 5px; margin-top: 10px; text-align: center;">
+                <i class="fas fa-flag-usa"></i> <strong>Prime Minister's Internship Scheme</strong> - Government of India Initiative
+            </div>
+        </header>
+
+        <!-- Main Form -->
+        <main class="main-content">
+            <form id="recommendation-form" class="form-container">
+                <div class="form-section">
+                    <h2><i class="fas fa-user"></i> Tell us about yourself</h2>
+                    
+                    <!-- Education -->
+                    <div class="input-group">
+                        <label for="education">
+                            <i class="fas fa-book"></i> Your Education Field
+                        </label>
+                        <select id="education" name="education" required>
+                            <option value="">Choose your field</option>
+                            <option value="Computer Science">Computer Science/IT</option>
+                            <option value="Electronics">Electronics/Electrical Engineering</option>
+                            <option value="Mechanical">Mechanical Engineering</option>
+                            <option value="Civil">Civil Engineering</option>
+                            <option value="Business">Business/Management</option>
+                            <option value="Commerce">Commerce/Finance/Accounting</option>
+                            <option value="Arts">Arts/Humanities/Literature</option>
+                            <option value="Design">Design/Fine Arts/Creative</option>
+                            <option value="Mass Communication">Media/Communication/Journalism</option>
+                            <option value="Marketing">Marketing/Sales/Digital Marketing</option>
+                            <option value="Human Resources">Human Resources/Psychology</option>
+                            <option value="Operations">Operations/Supply Chain/Logistics</option>
+                            <option value="Other">Other Engineering/Sciences</option>
+                        </select>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="input-group">
+                        <label for="skills">
+                            <i class="fas fa-tools"></i> Your Skills & Interests
+                        </label>
+                        <div class="skills-container">
+                            <div class="skill-tags">
+                                <span class="skill-tag" data-skill="python">Python</span>
+                                <span class="skill-tag" data-skill="java">Java</span>
+                                <span class="skill-tag" data-skill="web">Web Development</span>
+                                <span class="skill-tag" data-skill="mobile">Mobile Apps</span>
+                                <span class="skill-tag" data-skill="data">Data Analysis</span>
+                                <span class="skill-tag" data-skill="design">Design</span>
+                                <span class="skill-tag" data-skill="marketing">Marketing</span>
+                                <span class="skill-tag" data-skill="content">Content Writing</span>
+                                <span class="skill-tag" data-skill="sales">Sales</span>
+                                <span class="skill-tag" data-skill="finance">Finance</span>
+                            </div>
+                            <input type="text" id="skills" name="skills" placeholder="Click skills above or type your own (comma separated)">
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="input-group">
+                        <label for="location_preference">
+                            <i class="fas fa-map-marker-alt"></i> Where do you want to work?
+                        </label>
+                        <select id="location_preference" name="location_preference" required>
+                            <option value="">Choose location</option>
+                            <option value="remote">Work from Home (Remote)</option>
+                            <option value="bangalore">Bangalore</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="mumbai">Mumbai</option>
+                            <option value="pune">Pune</option>
+                            <option value="hyderabad">Hyderabad</option>
+                            <option value="chennai">Chennai</option>
+                            <option value="noida">Noida/Gurgaon</option>
+                            <option value="kolkata">Kolkata</option>
+                            <option value="any">Any location is fine</option>
+                        </select>
+                    </div>
+
+                    <!-- Minimum Stipend -->
+                    <div class="input-group">
+                        <label for="min_stipend">
+                            <i class="fas fa-rupee-sign"></i> Minimum Stipend Expected (₹/month)
+                        </label>
+                        <select id="min_stipend" name="min_stipend">
+                            <option value="0">I'm okay with unpaid</option>
+                            <option value="5000">₹5,000+</option>
+                            <option value="10000">₹10,000+</option>
+                            <option value="15000">₹15,000+</option>
+                            <option value="20000">₹20,000+</option>
+                            <option value="25000">₹25,000+ (PM Scheme Standard)</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-search"></i> Find My Perfect PM Internships
+                    </button>
+                </div>
+            </form>
+
+            <!-- Loading Spinner -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Finding the best PM internships for you...</p>
+            </div>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section hidden">
+                <h2><i class="fas fa-star"></i> Your Recommended PM Internships</h2>
+                <div id="recommendations-container" class="recommendations-container">
+                    <!-- Recommendations will be inserted here -->
+                </div>
+                <button id="search-again" class="secondary-btn">
+                    <i class="fas fa-redo"></i> Search Again
+                </button>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2024 PM Internship Scheme - Empowering Youth of India</p>
+            <p style="font-size: 12px; opacity: 0.8; margin-top: 5px;">Government of India Initiative | Ministry of Corporate Affairs</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

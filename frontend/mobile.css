@@ -1,0 +1,269 @@
+/* Mobile-First Responsive Design */
+
+/* Extra Small Devices (phones, 576px and down) */
+@media (max-width: 575.98px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .header p {
+        font-size: 1rem;
+    }
+    
+    .form-container,
+    .results-section {
+        padding: 20px 15px;
+    }
+    
+    .form-section h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .input-group select,
+    .input-group input[type="text"] {
+        padding: 12px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .skill-tags {
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .skill-tag {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+        touch-action: manipulation;
+    }
+    
+    .submit-btn {
+        padding: 15px 20px;
+        font-size: 1.1rem;
+        margin-top: 15px;
+    }
+    
+    .recommendation-card {
+        padding: 20px 15px;
+        margin-bottom: 15px;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+    }
+    
+    .card-company {
+        font-size: 1rem;
+    }
+    
+    .compatibility-score {
+        position: static;
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .detail-item {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .recommendations-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .skill-tags {
+        gap: 8px;
+    }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .recommendations-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Touch-Friendly Interactions */
+@media (hover: none) and (pointer: coarse) {
+    .skill-tag:hover {
+        background: #ecf0f1;
+        transform: none;
+    }
+    
+    .skill-tag:active {
+        background: #3498db;
+        color: white;
+        transform: scale(0.95);
+    }
+    
+    .submit-btn:hover {
+        transform: none;
+    }
+    
+    .submit-btn:active {
+        transform: scale(0.98);
+    }
+    
+    .recommendation-card:hover {
+        transform: none;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .header h1,
+    .form-section h2,
+    .results-section h2 {
+        font-weight: 600;
+    }
+}
+
+/* Landscape Orientation on Phones */
+@media (max-width: 767.98px) and (orientation: landscape) {
+    .header {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .form-container {
+        padding: 25px 20px;
+    }
+    
+    .input-group {
+        margin-bottom: 20px;
+    }
+}
+
+/* iOS Safari Specific - FIXED VERSION */
+@supports (-webkit-touch-callout: none) {
+    .input-group select,
+    .input-group input[type="text"] {
+        appearance: none; /* Use standard property */
+        -webkit-appearance: none; /* Keep for older Safari */
+        border-radius: 10px;
+    }
+    
+    .submit-btn {
+        appearance: none; /* Use standard property */
+        -webkit-appearance: none; /* Keep for older Safari */
+        border-radius: 10px;
+    }
+}
+
+/* Additional Mobile Optimizations */
+@media (max-width: 575.98px) {
+    /* Better tap targets */
+    .skill-tag {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .submit-btn {
+        min-height: 44px;
+    }
+    
+    /* Improved readability */
+    .recommendation-card {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .detail-item {
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+    
+    /* Better spacing for small screens */
+    .skills-list {
+        margin-top: 15px;
+    }
+    
+    .skill-chip {
+        margin-bottom: 5px;
+    }
+}
+
+/* Prevent horizontal scroll on very small screens */
+@media (max-width: 320px) {
+    .container {
+        padding: 8px;
+    }
+    
+    .header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .form-container,
+    .results-section {
+        padding: 15px 12px;
+    }
+    
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+}
+
+/* Dark mode support for mobile */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+    .recommendation-card {
+        background: #2c3e50;
+        color: #ecf0f1;
+    }
+    
+    .card-title {
+        color: #3498db;
+    }
+    
+    .detail-item {
+        color: #bdc3c7;
+    }
+}
+
+/* Accessibility improvements for mobile */
+@media (max-width: 768px) {
+    /* Focus indicators */
+    .input-group select:focus,
+    .input-group input[type="text"]:focus {
+        outline: 3px solid #3498db;
+        outline-offset: 2px;
+    }
+    
+    .skill-tag:focus {
+        outline: 2px solid #3498db;
+        outline-offset: 2px;
+    }
+    
+    .submit-btn:focus {
+        outline: 3px solid #2980b9;
+        outline-offset: 2px;
+    }
+    
+    /* Reduced motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+        .skill-tag,
+        .submit-btn,
+        .recommendation-card {
+            transition: none;
+        }
+    }
+}
