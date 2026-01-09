@@ -11,6 +11,12 @@ An AI-assisted recommendation system that matches students to internships based 
 - Pandas, Scikit-learn
 - HTML, CSS, JavaScript
 
+## Future Enhancements
+- Resume-based recommendations (PDF parsing)
+- User login & profile saving
+- Real-time internship API integration
+- ML model training using feedback
+
 ## Workflow
 1. User enters preferences
 2. Backend filters internships
